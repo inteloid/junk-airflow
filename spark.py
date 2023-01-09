@@ -40,7 +40,7 @@ spark_submit = SparkSubmitOperator(
         verbose=True,
         application_args=['s3a://test-bucket/input.csv', 's3a://test-bucket/result/spark'],
         env_vars={
-            'KUBECONaFIG': kube_config_path
+            'KUBECONaFIG': 'kube_config_path'
         },
 	dag=spark_dag
     )
