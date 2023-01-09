@@ -1,0 +1,25 @@
+[2023-01-09T14:48:58.365+0400] {processor.py:153} INFO - Started process (PID=13553) to work on /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:48:58.366+0400] {processor.py:743} INFO - Processing file /Users/harut/junk-airflow/dags/basho1.py for tasks to queue
+[2023-01-09T14:48:58.366+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.366+0400] {dagbag.py:538} INFO - Filling up the DagBag from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:48:58.383+0400] {processor.py:753} INFO - DAG(s) dict_keys(['basho1']) retrieved from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:48:58.816+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.815+0400] {manager.py:504} INFO - Created Permission View: can delete on DAG:basho1
+[2023-01-09T14:48:58.819+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.819+0400] {manager.py:504} INFO - Created Permission View: can read on DAG:basho1
+[2023-01-09T14:48:58.822+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.822+0400] {manager.py:504} INFO - Created Permission View: can edit on DAG:basho1
+[2023-01-09T14:48:58.822+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.822+0400] {dag.py:2676} INFO - Sync 1 DAGs
+[2023-01-09T14:48:58.827+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.827+0400] {dag.py:2697} INFO - Creating ORM DAG for basho1
+[2023-01-09T14:48:58.832+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:48:58.832+0400] {dag.py:3423} INFO - Setting next_dagrun for basho1 to 2023-01-08T10:48:58.832622+00:00, run_after=2023-01-09T10:48:58.832622+00:00
+[2023-01-09T14:48:58.841+0400] {processor.py:175} INFO - Processing /Users/harut/junk-airflow/dags/basho1.py took 0.476 seconds
+[2023-01-09T14:49:52.927+0400] {processor.py:153} INFO - Started process (PID=13586) to work on /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:49:52.927+0400] {processor.py:743} INFO - Processing file /Users/harut/junk-airflow/dags/basho1.py for tasks to queue
+[2023-01-09T14:49:52.928+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:49:52.928+0400] {dagbag.py:538} INFO - Filling up the DagBag from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:49:52.943+0400] {processor.py:753} INFO - DAG(s) dict_keys(['basho1']) retrieved from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:49:53.317+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:49:53.317+0400] {dag.py:2676} INFO - Sync 1 DAGs
+[2023-01-09T14:49:53.326+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:49:53.326+0400] {dag.py:3423} INFO - Setting next_dagrun for basho1 to 2023-01-08T10:49:53.326428+00:00, run_after=2023-01-09T10:49:53.326428+00:00
+[2023-01-09T14:49:53.335+0400] {processor.py:175} INFO - Processing /Users/harut/junk-airflow/dags/basho1.py took 0.409 seconds
+[2023-01-09T14:51:13.049+0400] {processor.py:153} INFO - Started process (PID=13631) to work on /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:51:13.049+0400] {processor.py:743} INFO - Processing file /Users/harut/junk-airflow/dags/basho1.py for tasks to queue
+[2023-01-09T14:51:13.050+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:51:13.050+0400] {dagbag.py:538} INFO - Filling up the DagBag from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:51:13.065+0400] {processor.py:753} INFO - DAG(s) dict_keys(['basho1']) retrieved from /Users/harut/junk-airflow/dags/basho1.py
+[2023-01-09T14:51:13.440+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:51:13.440+0400] {dag.py:2676} INFO - Sync 1 DAGs
+[2023-01-09T14:51:13.449+0400] {logging_mixin.py:137} INFO - [2023-01-09T14:51:13.449+0400] {dag.py:3423} INFO - Setting next_dagrun for basho1 to 2023-01-08T10:51:13.449037+00:00, run_after=2023-01-09T10:51:13.449037+00:00
+[2023-01-09T14:51:13.459+0400] {processor.py:175} INFO - Processing /Users/harut/junk-airflow/dags/basho1.py took 0.410 seconds
