@@ -28,14 +28,24 @@ dag_spark = DAG(
         start_date = airflow.utils.dates.days_ago(1)
 )
 
-spark_submit_local = SparkSubmitOperator(
-	application ='/home/hduser/basicsparksubmit.py' ,
-	conn_id= 'spark_local', 
-	task_id='spark_submit_task', 
-	dag=dag_spark
-)
+spark_submit = SparkSubmitOperator(
+        task_id='demo-spark-app-id',
+        conn_id='spark_default', # Set connection details in the airflow connections. Connection string: k8s://https://<k8s-master-host>:443/?queue=root.default&deploy-mode=cluster
+        application='local:///opt/spark/jars/spark-on-eks-example-assembly-v1.0.jar',
+        name='spark-on-eks-example',
+        java_class='ExampleApp',
+        conf={
+            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+        },
+        verbose=True,
+        application_args=['s3a://test-bucket/input.csv', 's3a://test-bucket/result/spark'],
+        env_vars={
+            'KUBECONaFIG': kube_config_path
+        },
+	dag=spark_dag
+    )
 
-spark_submit_local
+spark_submit
 
 if __name__ == "__main__":
     dag_spark.cli()
