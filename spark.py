@@ -42,7 +42,7 @@ spark_submit = SparkSubmitOperator(
         env_vars={
             'KUBECONaFIG': 'kube_config_path'
         },
-	dag=spark_dag
+	dag=dag_spark
     )
 
 spark_submit
