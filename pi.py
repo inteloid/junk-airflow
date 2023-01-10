@@ -13,3 +13,7 @@ def inside(p):
 count = spark.sparkContext.parallelize(range(0, NUM_SAMPLES)) \
              .filter(inside).count()
 print("Pi is roughly %f" % (4.0 * count / NUM_SAMPLES))
+
+def cnt = spark.read.parquet("s3a://data/dns/date=2022-12-29").count()
+
+print("Well " + cnt)
