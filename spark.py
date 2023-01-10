@@ -37,6 +37,7 @@ spark_submit = SparkSubmitOperator(
 		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-java:latest',
 		'spark.kubernetes.authenticate.driver.serviceAccountName': 'spark',
 		'spark.kubernetes.authenticate.executor.serviceAccountName': 'spark',
+		'spark.kubernetes.file.upload.path':'s3a://jars/',
 		'spark.driver.extraJavaOptions': '"-Divy.cache.dir: /tmp -Divy.home: /tmp\"',
 		'spark.hadoop.fs.s3a.access.key': 'zDdnekZrHIyltouc',
 		'spark.hadoop.fs.s3a.secret.key': '4ZbbjxGjHWpTCnqVaOJDusc70cIn',
