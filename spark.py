@@ -33,9 +33,20 @@ spark_submit = SparkSubmitOperator(
         conn_id='spark_k8s', # Set connection details in the airflow connections. Connection string: k8s://https://<k8s-master-host>:443/?queue=root.default&deploy-mode=cluster
         application='./dags/repo/pi.py',
         name='spark-on-eks-example',
-        java_class='ExampleApp',
         conf={
-            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-java:latest',
+		'spark.kubernetes.authenticate.driver.serviceAccountName': 'spark',
+		'spark.kubernetes.authenticate.executor.serviceAccountName': 'spark',
+		'spark.driver.extraJavaOptions': '"-Divy.cache.dir: /tmp -Divy.home: /tmp\"',
+		'spark.hadoop.fs.s3a.access.key': 'zDdnekZrHIyltouc',
+		'spark.hadoop.fs.s3a.secret.key': '4ZbbjxGjHWpTCnqVaOJDusc70cIn',
+		'spark.hadoop.fs.s3a.endpoint': 'http://10.1.51.44:30381',
+		'spark.hadoop.fs.s3a.path.style.access': 'true',
+		'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
+		'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem",
+		'spark.executor.instances': 8,
+		'spark.driver.host': socket.gethostbyname(socket.gethostname()),
+		'spark.rpc.askTimeout': 36000
         },
         verbose=True,
         application_args=['s3a://test-bucket/input.csv', 's3a://test-bucket/result/spark'],
