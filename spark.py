@@ -31,7 +31,7 @@ dag_spark = DAG(
 spark_submit = SparkSubmitOperator(
         task_id='demo-spark-app-id',
         conn_id='spark_k8s', # Set connection details in the airflow connections. Connection string: k8s://https://<k8s-master-host>:443/?queue=root.default&deploy-mode=cluster
-        application='local:///opt/spark/jars/spark-on-eks-example-assembly-v1.0.jar',
+        application='./pi.py',
         name='spark-on-eks-example',
         java_class='ExampleApp',
         conf={
