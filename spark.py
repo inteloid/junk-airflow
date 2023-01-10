@@ -35,7 +35,7 @@ spark_submit = SparkSubmitOperator(
 	jars='/opt/airflow/aws-java-sdk-bundle-1.12.376.jar,/opt/airflow/hadoop-aws-3.3.4.jar',
         name='spark-on-eks-example',
         conf={
-		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-3.3.1-pyspark:latest',
+		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-3.3.1-pyspark:v2',
 		'spark.kubernetes.authenticate.driver.serviceAccountName': 'spark',
 		'spark.kubernetes.authenticate.executor.serviceAccountName': 'spark',
 		'spark.kubernetes.file.upload.path':'s3a://jars/',
