@@ -43,9 +43,8 @@ spark_submit = SparkSubmitOperator(
 		'spark.hadoop.fs.s3a.endpoint': 'http://10.1.51.44:30381',
 		'spark.hadoop.fs.s3a.path.style.access': 'true',
 		'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
-		'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem",
+		'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
 		'spark.executor.instances': 8,
-		'spark.driver.host': socket.gethostbyname(socket.gethostname()),
 		'spark.rpc.askTimeout': 36000
         },
         verbose=True,
