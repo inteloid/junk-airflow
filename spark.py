@@ -45,7 +45,7 @@ spark_submit = SparkSubmitOperator(
 		'spark.hadoop.fs.s3a.path.style.access': 'true',
 		'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
 		'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
-		'spark.executor.instances': 8,
+		'spark.executor.instances': 3,
 		'spark.rpc.askTimeout': 36000
         },
         verbose=True,
