@@ -34,7 +34,7 @@ spark_submit = SparkSubmitOperator(
         application='./dags/repo/pi.py',
         name='spark-on-eks-example',
         conf={
-		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-java:latest',
+		'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-3.3.1-pyspark:latest',
 		'spark.kubernetes.authenticate.driver.serviceAccountName': 'spark',
 		'spark.kubernetes.authenticate.executor.serviceAccountName': 'spark',
 		'spark.kubernetes.file.upload.path':'s3a://jars/',
