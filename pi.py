@@ -16,4 +16,4 @@ print("Pi is roughly %f" % (4.0 * count / NUM_SAMPLES))
 
 cnt = spark.read.parquet("s3a://data/dns/date=2022-12-29").count()
 
-print("Well " + cnt)
+print(cnt)
