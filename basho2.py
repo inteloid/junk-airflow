@@ -29,7 +29,7 @@ with DAG(
 	schedule=timedelta(days=1),
 	start_date=datetime(2021, 1, 1),
 	catchup=False,
-	tags=["example"],
+	tags=["example1"],
 ) as dag:
 	run_this = BashOperator(
 	    task_id="run_after_loop",
