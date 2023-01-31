@@ -33,6 +33,7 @@ with DAG(
 	tags=["example1"],
 ) as dag:
 	run_this = TestOperator(
+	    name="asd",
 	    task_id="run_after_loop",
 	    bash_command="echo 1",
 	)
