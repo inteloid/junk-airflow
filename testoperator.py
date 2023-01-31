@@ -5,4 +5,4 @@ class TestOperator(BashOperator):
         super().__init__(**kwargs)
 
     def execute(self, context):
-        super(context)
+        super().execute(context)
