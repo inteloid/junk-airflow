@@ -5,7 +5,7 @@ from airflow.operators.bash import BashOperator
 from testoperator import TestOperator
 
 with DAG(
-	"basho2",
+	"cust",
 	default_args={
 	        "depends_on_past": False,
 	        "email": ["airflow@example.com"],
