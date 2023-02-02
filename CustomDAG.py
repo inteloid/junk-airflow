@@ -33,7 +33,30 @@ with DAG(
 	tags=["example1"],
 ) as dag:
 	run_this = TestOperator(
-	    name="asd",
-	    task_id="run_after_loop",
-	    bash_command="echo 1",
+	    task_id='demo-spark-app-id',
+	    conn_id='spark_k8s', # Set connection details in the airflow connections. Connection string: k8s://https://<k8s-master-host>:443/?queue=root.default&deploy-mode=cluster
+	    application='./dags/repo/pi.py',
+	    driver_class_path='/opt/airflow/',
+	    jars='/opt/airflow/aws-java-sdk-bundle-1.12.376.jar,/opt/airflow/hadoop-aws-3.3.4.jar',
+	    name='spark-on-eks-example',
+	    conf={
+	    	'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-3.3.1-pyspark:v12',
+	    	'spark.kubernetes.authenticate.driver.serviceAccountName': 'harut',
+	    	'spark.kubernetes.authenticate.executor.serviceAccountName': 'harut',
+	    	'spark.kubernetes.namespace': 'engineering-harut',
+	    	'spark.kubernetes.file.upload.path':'s3a://jars/',
+	    	'spark.hadoop.fs.s3a.access.key': 'zDdnekZrHIyltouc',
+	    	'spark.hadoop.fs.s3a.secret.key': '4ZbbjxGjHWpTCnqVaOJDusc70cIn',
+	    	'spark.hadoop.fs.s3a.endpoint': 'http://10.1.51.44:30381',
+	    	'spark.hadoop.fs.s3a.path.style.access': 'true',
+	    	'spark.hadoop.fs.s3a.connection.ssl.enabled': 'false',
+	    	'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+	    	'spark.executor.instances': 3,
+	    	'spark.rpc.askTimeout': 36000
+	    },
+	    verbose=True,
+	    application_args=['s3a://test-bucket/input.csv', 's3a://test-bucket/result/spark'],
+	    env_vars={
+	        'KUBECONaFIG': 'kube_config_path'
+	    }
 	)
