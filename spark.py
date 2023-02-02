@@ -41,7 +41,6 @@ spark_submit = SparkSubmitOperator(
 		'spark.kubernetes.authenticate.executor.serviceAccountName': 'harut',
 		'spark.kubernetes.namespace': 'engineering-harut',
 		'spark.kubernetes.file.upload.path':'s3a://jars/',
-		'spark.driver.extraJavaOptions': '"-Divy.cache.dir: /tmp -Divy.home: /tmp"',
 		'spark.hadoop.fs.s3a.access.key': 'zDdnekZrHIyltouc',
 		'spark.hadoop.fs.s3a.secret.key': '4ZbbjxGjHWpTCnqVaOJDusc70cIn',
 		'spark.hadoop.fs.s3a.endpoint': 'http://10.1.51.44:30381',
