@@ -5,7 +5,7 @@ import json
 
 class TestOperator(SparkSubmitOperator):
     def __init__(self, name: str, notebook: str, **kwargs) -> None:
-        convertNotebook(notebook)
+        self.convertNotebook(notebook)
         super().__init__(**kwargs)
 
     def execute(self, context):
