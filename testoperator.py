@@ -1,6 +1,6 @@
-from airflow.operators.bash import BashOperator
+from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator 
 
-class TestOperator(BashOperator):
+class TestOperator(SparkSubmitOperator):
     def __init__(self, name: str, **kwargs) -> None:
         super().__init__(**kwargs)
 
