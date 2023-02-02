@@ -39,7 +39,7 @@ with DAG(
 	    driver_class_path='/opt/airflow/',
 	    jars='/opt/airflow/aws-java-sdk-bundle-1.12.376.jar,/opt/airflow/hadoop-aws-3.3.4.jar',
 	    name='spark-on-eks-example',
-	    notebook='/opt/airflow/dags/repo/test_report/report.ipynb',
+	    notebook='/opt/airflow/dags/repo/report.ipynb',
 	    conf={
 	    	'spark.kubernetes.container.image': 'harbor.intent.ai/library/spark-3.3.1-pyspark:v12',
 	    	'spark.kubernetes.authenticate.driver.serviceAccountName': 'harut',
