@@ -11,7 +11,7 @@ class TestOperator(SparkSubmitOperator):
     def execute(self, context):
         super().execute(context)
         
-    def convertNotebook(notebook)
+    def convertNotebook(self, notebook):
         print('# file: %s' % notebook)
         print('# vi: filetype=python')
         print('')
