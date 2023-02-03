@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from textwrap import dedent
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from testoperator import TestOperator
+from test_report.testoperator import TestOperator
 
 with DAG(
 	"TestReport1",
