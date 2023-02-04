@@ -22,10 +22,10 @@ spark = SparkSession.builder.appName('job-for-pi').getOrCreate(); \n
 """
         for cell in code['cells']:
                 # print('# -------- code --------', cell['cell_type'])
+                paragraphCode = ""
                 for line in cell['source']:
-                    pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +line + "\n" + '""");\n'
-                    print(line, end='')
-                print('\n')
+                    paragraphCode = paragraphCode + line + "\n"
+                pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +paragraphCode + "\n" + '""");\n'
         f = open("/tmp/__job.py", "w")
         f.write(pyFileContent)
         f.close()
