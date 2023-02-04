@@ -4,7 +4,7 @@ import json
 
 
 class TestOperator(SparkSubmitOperator):
-    def __init__(self, name: str, notebook: str, **kwargs) -> None:
+    def __init__(self, notebook: str, **kwargs) -> None:
         self.convertNotebook(notebook)
         kwargs['task_id'] ='demo-spark-app-id';
         kwargs['conn_id'] ='spark_k8s';
