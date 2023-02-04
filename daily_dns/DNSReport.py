@@ -5,14 +5,15 @@ from airflow.operators.bash import BashOperator
 from daily_dns.testoperator import TestOperator
 
 with DAG(
-	"DNSReport",
-	description="Daily DNS requests",
-	tags=["dns", "core"],
-	default_args={
+    "DNSReport",
+    description="Daily DNS requests",
+    tags=["dns", "core"],
+    default_args={
         "depends_on_past": False,
-        "email": ["airflow@example.com"],
-        "email_on_failure": False,
-        "email_on_retry": False,
+        "email": ["harut.martirosyan@gmail.com"],
+        "email_on_failure": True,
+        "email_on_retry": True,
+        "email_on_success": True,
         "retries": 1,
         "retry_delay": timedelta(minutes=5),
         # 'queue': 'bash_queue',
@@ -27,11 +28,11 @@ with DAG(
         # 'on_retry_callback': another_function,
         # 'sla_miss_callback': yet_another_function,
         # 'trigger_rule': 'all_success'
-	},
-	schedule=timedelta(days=1),
-	start_date=datetime(2021, 1, 1),
-	catchup=False,
-) as dag:
-	run_this = TestOperator(
-	    notebook='/opt/airflow/dags/repo/daily_dns/report.ipynb',
-	)
+    },
+    schedule_interval = "@hourly",
+    start_date=datetime(2021, 1, 1),
+    catchup=False,
+    ) as dag:
+    run_this = TestOperator(
+        notebook='/opt/airflow/dags/repo/daily_dns/report.ipynb',
+    )
