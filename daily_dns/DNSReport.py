@@ -2,10 +2,10 @@ from datetime import datetime, timedelta
 from textwrap import dedent
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from test_report.testoperator import TestOperator
+from daily_dns.testoperator import TestOperator
 
 with DAG(
-	"TestReport1",
+	"DNSReport",
 	default_args={
 	        "depends_on_past": False,
 	        "email": ["airflow@example.com"],
