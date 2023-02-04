@@ -35,7 +35,7 @@ with DAG(
 	run_this = TestOperator(
 	    task_id='demo-spark-app-id',
 	    conn_id='spark_k8s', # Set connection details in the airflow connections. Connection string: k8s://https://<k8s-master-host>:443/?queue=root.default&deploy-mode=cluster
-	    application='./dags/repo/__job.py',
+	    application='/tmp/__job.py',
 	    driver_class_path='/opt/airflow/',
 	    jars='/opt/airflow/aws-java-sdk-bundle-1.12.376.jar,/opt/airflow/hadoop-aws-3.3.4.jar',
 	    name='spark-on-eks-example',

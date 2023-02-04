@@ -24,6 +24,6 @@ class TestOperator(SparkSubmitOperator):
                     pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +line + "\n" + '""")'
                     print(line, end='')
                 print('\n')
-        f = open("/opt/airflow/dags/repo/__job.py", "w")
+        f = open("/tmp/__job.py", "w")
         f.write(pyFileContent)
         f.close()
