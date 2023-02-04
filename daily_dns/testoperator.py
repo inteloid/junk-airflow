@@ -17,7 +17,9 @@ class TestOperator(SparkSubmitOperator):
         print('')
         code = json.load(open(notebook))
 
-        pyFileContent = "spark = SparkSession.builder.appName('job-for-pi').getOrCreate(); \n"
+        pyFileContent = """from pyspark.sql import SparkSession; \n
+spark = SparkSession.builder.appName('job-for-pi').getOrCreate(); \n
+                        """
         for cell in code['cells']:
                 # print('# -------- code --------', cell['cell_type'])
                 for line in cell['source']:
