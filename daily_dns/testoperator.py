@@ -17,8 +17,15 @@ class TestOperator(SparkSubmitOperator):
         print('')
         code = json.load(open(notebook))
 
+        pyFileContent = ""
         for cell in code['cells']:
                 # print('# -------- code --------', cell['cell_type'])
                 for line in cell['source']:
+                    pyFileContent = "spark.sql("""\n +
+                            "pyFileContent + line + "\n" + 
+                            """)
                     print(line, end='')
                 print('\n')
+        f = open("__job.py", "w")
+        f.write(pyFileContent)
+        f.close()
