@@ -21,7 +21,7 @@ class TestOperator(SparkSubmitOperator):
         for cell in code['cells']:
                 # print('# -------- code --------', cell['cell_type'])
                 for line in cell['source']:
-                    pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +line + "\n" + '""")'
+                    pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +line + "\n" + '""");\n'
                     print(line, end='')
                 print('\n')
         f = open("/tmp/__job.py", "w")
