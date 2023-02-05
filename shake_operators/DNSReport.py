@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from textwrap import dedent
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from daily_shakes.testoperator import TestOperator
+from shake_operators.testoperator import TestOperator
 
 with DAG(
     "ShakeReport",
@@ -35,5 +35,5 @@ with DAG(
     catchup=False,
     ) as dag:
     run_this = TestOperator(
-        notebook='/opt/airflow/dags/repo/daily_shakes/report.ipynb',
+        notebook='/opt/airflow/dags/repo/shake_operators/report.ipynb',
     )
