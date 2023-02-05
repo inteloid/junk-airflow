@@ -16,6 +16,7 @@ with DAG(
         "email_on_success": True,
         "retries": 1,
         "retry_delay": timedelta(minutes=5),
+        "owner_links": {"nvard": "https://airflow.apache.org"},
         # 'queue': 'bash_queue',
         # 'pool': 'backfill',
         # 'priority_weight': 10,
