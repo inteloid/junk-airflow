@@ -5,7 +5,7 @@ from airflow.operators.bash import BashOperator
 from daily_shakes.testoperator import TestOperator
 
 with DAG(
-    "DNSReport",
+    "ShakeReport",
     description="Daily Shakes",
     tags=["app", "shake"],
     default_args={
