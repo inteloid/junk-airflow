@@ -26,7 +26,7 @@ class TestOperator(SparkSubmitOperator):
             'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
             'spark.executor.instances': 6,
             'spark.executor.cores': 4,
-            'spark.executor.memory': 16,
+            'spark.executor.memory': "16g",
             'spark.rpc.askTimeout': 36000
         };
         kwargs['verbose'] = True;
