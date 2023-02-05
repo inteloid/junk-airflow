@@ -55,7 +55,8 @@ spark = SparkSession.builder.appName('job-for-pi').getOrCreate(); \n
                     line = line.strip()
                     if not line == "":
                         paragraphCode = paragraphCode + line + "\n"
-                pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +paragraphCode + "\n" + '""");\n'
+                if not paragraphCode = "":
+                    pyFileContent = pyFileContent + 'spark.sql("""' + "\n" +paragraphCode.strip() + "\n" + '""");\n'
         f = open("/tmp/__job.py", "w")
         f.write(pyFileContent)
         f.close()
